@@ -28,21 +28,21 @@ public class Game {
             return Player.PLAYER_O.getValue();
         }
 
-        if (isSecondRowFilledByPlayerO(Player.PLAYER_X.getValue())) {
+        if (isSecondRowFilledByPlayer(Player.PLAYER_X.getValue())) {
             return Player.PLAYER_X.getValue();
         }
 
-        if (isSecondRowFilledByPlayerO(Player.PLAYER_O.getValue())) {
+        if (isSecondRowFilledByPlayer(Player.PLAYER_O.getValue())) {
             return Player.PLAYER_O.getValue();
         }
 
         return '\0';
     }
 
-    private boolean isSecondRowFilledByPlayerO(char playerO) {
-        return getPlayerAt(POSITION_ONE, POSITION_ZERO) == playerO
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == playerO
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == playerO;
+    private boolean isSecondRowFilledByPlayer(char player) {
+        return getPlayerAt(POSITION_ONE, POSITION_ZERO) == player
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
+                && getPlayerAt(POSITION_ONE, POSITION_TWO) == player;
     }
 
     private boolean isFirstRowFilledByPlayer(char player) {
