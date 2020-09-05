@@ -12,6 +12,7 @@ public class GameTest {
     private static final int POSITION_ZERO = 0;
     private static final int POSITION_ONE = 1;
     private static final int POSITION_TWO = 2;
+    private static final char CHARACTER_NULL = '\0';
     private Game game;
 
     @Before
@@ -69,7 +70,7 @@ public class GameTest {
         game.playAt(POSITION_ONE, POSITION_TWO);
         game.playAt(POSITION_ONE, POSITION_ZERO);
 
-        assertThat(game.getWinner(), is('\0'));
+        assertThat(game.getWinner(), is(CHARACTER_NULL));
     }
 
     @Test
@@ -245,6 +246,6 @@ public class GameTest {
         game.playAt(POSITION_TWO, POSITION_TWO);
         game.playAt(POSITION_ZERO, POSITION_TWO);
 
-        assertThat(game.getWinner(), is('\0'));
+        assertThat(game.getWinner(), is(CHARACTER_NULL));
     }
 }
