@@ -22,26 +22,26 @@ public class Game {
     public char getWinner() {
         char winner = '\0';
         if (isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
-                || isThirdColumnFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_ZERO)
-                || isThirdColumnFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_ONE)
-                || isThirdColumnFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_TWO)) {
+                || isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_X.getValue())
+                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_X.getValue())
+                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
         if (isAnyRowFilledByPlayer(Player.PLAYER_O.getValue())
-                || isThirdColumnFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_ZERO)
-                || isThirdColumnFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_ONE)
-                || isThirdColumnFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_TWO)) {
+                || isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_O.getValue())
+                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_O.getValue())
+                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isThirdColumnFilledByPlayer(char player, int positionTwo) {
-        return getPlayerAt(POSITION_ZERO, positionTwo) == player
-                && getPlayerAt(POSITION_ONE, positionTwo) == player
-                && getPlayerAt(POSITION_TWO, positionTwo) == player;
+    private boolean isColumnFilledByPlayer(int columnPosition, char player) {
+        return getPlayerAt(POSITION_ZERO, columnPosition) == player
+                && getPlayerAt(POSITION_ONE, columnPosition) == player
+                && getPlayerAt(POSITION_TWO, columnPosition) == player;
     }
 
     private boolean isAnyRowFilledByPlayer(char player) {
