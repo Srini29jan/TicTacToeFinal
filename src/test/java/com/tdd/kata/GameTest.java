@@ -1,6 +1,5 @@
 package com.tdd.kata;
 
-import javafx.print.PageLayout;
 import org.junit.Before;
 import org.junit.Test;
 

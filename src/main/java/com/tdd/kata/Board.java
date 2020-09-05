@@ -4,7 +4,7 @@ public class Board {
 
     private static final int GRID_SIZE = 3;
     private final char[][] gameBoard;
-    private char previousPlayer;
+    char previousPlayer;
 
     public Board() {
         gameBoard = new char[GRID_SIZE][GRID_SIZE];

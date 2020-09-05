@@ -21,12 +21,8 @@ public class Game {
 
     public char getWinner() {
         char winner = '\0';
-        if (isGameWonByPlayer(Player.PLAYER_X.getValue())) {
-            winner = Player.PLAYER_X.getValue();
-        }
-
-        if (isGameWonByPlayer(Player.PLAYER_O.getValue())) {
-            winner = Player.PLAYER_O.getValue();
+        if (isGameWonByPlayer(board.previousPlayer)) {
+            winner = board.previousPlayer;
         }
 
         return winner;
