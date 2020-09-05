@@ -33,12 +33,12 @@ public class Game {
     }
 
     private boolean isAnyRowFilledByPlayer(char player) {
-        return isAnyRowFilledByPlayer(POSITION_ZERO, player)
-                || isAnyRowFilledByPlayer(POSITION_ONE, player)
-                || isAnyRowFilledByPlayer(POSITION_TWO, player);
+        return isRowFilledByPlayer(POSITION_ZERO, player)
+                || isRowFilledByPlayer(POSITION_ONE, player)
+                || isRowFilledByPlayer(POSITION_TWO, player);
     }
 
-    private boolean isAnyRowFilledByPlayer(int rowPosition, char player) {
+    private boolean isRowFilledByPlayer(int rowPosition, char player) {
         return getPlayerAt(rowPosition, POSITION_ZERO) == player
                 && getPlayerAt(rowPosition, POSITION_ONE) == player
                 && getPlayerAt(rowPosition, POSITION_TWO) == player;
