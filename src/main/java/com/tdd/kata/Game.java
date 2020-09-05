@@ -21,25 +21,25 @@ public class Game {
 
     public char getWinner() {
         char winner = '\0';
-        if (isThirdRowFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_ZERO)
-                || isThirdRowFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_ONE)
-                || isThirdRowFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_TWO)) {
+        if (isAnyRowFilledByPlayer(POSITION_ZERO, Player.PLAYER_X.getValue())
+                || isAnyRowFilledByPlayer(POSITION_ONE, Player.PLAYER_X.getValue())
+                || isAnyRowFilledByPlayer(POSITION_TWO, Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isThirdRowFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_ZERO)
-                || isThirdRowFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_ONE)
-                || isThirdRowFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_TWO)) {
+        if (isAnyRowFilledByPlayer(POSITION_ZERO, Player.PLAYER_O.getValue())
+                || isAnyRowFilledByPlayer(POSITION_ONE, Player.PLAYER_O.getValue())
+                || isAnyRowFilledByPlayer(POSITION_TWO, Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isThirdRowFilledByPlayer(char player, int positionTwo) {
-        return getPlayerAt(positionTwo, POSITION_ZERO) == player
-                && getPlayerAt(positionTwo, POSITION_ONE) == player
-                && getPlayerAt(positionTwo, POSITION_TWO) == player;
+    private boolean isAnyRowFilledByPlayer(int rowPosition, char player) {
+        return getPlayerAt(rowPosition, POSITION_ZERO) == player
+                && getPlayerAt(rowPosition, POSITION_ONE) == player
+                && getPlayerAt(rowPosition, POSITION_TWO) == player;
     }
 
 }
