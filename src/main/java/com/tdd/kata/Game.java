@@ -31,21 +31,21 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isSecondColumnFilledByPlayerO(Player.PLAYER_X.getValue())) {
+        if (isSecondColumnFilledByPlayer(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isSecondColumnFilledByPlayerO(Player.PLAYER_O.getValue())) {
+        if (isSecondColumnFilledByPlayer(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isSecondColumnFilledByPlayerO(char playerO) {
-        return getPlayerAt(POSITION_ZERO, POSITION_ONE) == playerO
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == playerO
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == playerO;
+    private boolean isSecondColumnFilledByPlayer(char player) {
+        return getPlayerAt(POSITION_ZERO, POSITION_ONE) == player
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
+                && getPlayerAt(POSITION_TWO, POSITION_ONE) == player;
     }
 
     private boolean isFirstColumnFilledByPlayer(char player) {
