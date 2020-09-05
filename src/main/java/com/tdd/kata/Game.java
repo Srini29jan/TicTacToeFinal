@@ -28,6 +28,12 @@ public class Game {
             return Player.PLAYER_O.getValue();
         }
 
+        if (getPlayerAt(POSITION_ONE, POSITION_ZERO) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_ONE, POSITION_TWO) == Player.PLAYER_X.getValue()) {
+            return Player.PLAYER_X.getValue();
+        }
+
         return '\0';
     }
 
