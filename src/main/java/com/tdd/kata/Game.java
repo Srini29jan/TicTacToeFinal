@@ -29,16 +29,16 @@ public class Game {
 
         if (isAnyRowFilledByPlayer(Player.PLAYER_O.getValue())
                 || isAnyColumnFilledByPlayer(Player.PLAYER_O.getValue())
-                || isAnyDiagonalFilledByPlayerO()) {
+                || isAnyDiagonalFilledByPlayerO(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isAnyDiagonalFilledByPlayerO() {
-        return isTopLeftToBottomRightDiagonalFilledByPlayer(Player.PLAYER_O.getValue())
-                || isTopRightToBottomLeftDiagonalFilledByPlayer(Player.PLAYER_O.getValue());
+    private boolean isAnyDiagonalFilledByPlayerO(char playerO) {
+        return isTopLeftToBottomRightDiagonalFilledByPlayer(playerO)
+                || isTopRightToBottomLeftDiagonalFilledByPlayer(playerO);
     }
 
     private boolean isAnyDiagonalFilledByPlayerX() {
