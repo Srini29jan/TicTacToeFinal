@@ -31,21 +31,21 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isThirdRowFilledByPlayerO(Player.PLAYER_X.getValue())) {
+        if (isThirdRowFilledByPlayer(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isThirdRowFilledByPlayerO(Player.PLAYER_O.getValue())) {
+        if (isThirdRowFilledByPlayer(Player.PLAYER_O.getValue())) {
             return Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isThirdRowFilledByPlayerO(char playerO) {
-        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == playerO
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == playerO
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == playerO;
+    private boolean isThirdRowFilledByPlayer(char player) {
+        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == player
+                && getPlayerAt(POSITION_TWO, POSITION_ONE) == player
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == player;
     }
 
     private boolean isSecondRowFilledByPlayer(char player) {
