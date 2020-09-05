@@ -31,7 +31,7 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isThirdRowFilledByPlayerX()) {
+        if (isThirdRowFilledByPlayerO(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
