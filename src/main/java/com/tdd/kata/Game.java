@@ -22,22 +22,22 @@ public class Game {
     public char getWinner() {
         char winner = '\0';
         if (isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
-                || isAnyColumnFilledByPlayerO(Player.PLAYER_X.getValue())) {
+                || isAnyColumnFilledByPlayer(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
         if (isAnyRowFilledByPlayer(Player.PLAYER_O.getValue())
-                || isAnyColumnFilledByPlayerO(Player.PLAYER_O.getValue())) {
+                || isAnyColumnFilledByPlayer(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isAnyColumnFilledByPlayerO(char playerO) {
-        return isColumnFilledByPlayer(POSITION_ZERO, playerO)
-                || isColumnFilledByPlayer(POSITION_ONE, playerO)
-                || isColumnFilledByPlayer(POSITION_TWO, playerO);
+    private boolean isAnyColumnFilledByPlayer(char player) {
+        return isColumnFilledByPlayer(POSITION_ZERO, player)
+                || isColumnFilledByPlayer(POSITION_ONE, player)
+                || isColumnFilledByPlayer(POSITION_TWO, player);
     }
 
     private boolean isColumnFilledByPlayer(int columnPosition, char player) {
