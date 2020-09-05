@@ -46,12 +46,6 @@ public class Game {
                 && getPlayerAt(POSITION_TWO, POSITION_ZERO) == playerO;
     }
 
-    private boolean isFirstColumnFilledByPlayerX() {
-        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_ZERO) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_ZERO) == Player.PLAYER_X.getValue();
-    }
-
     private boolean isAnyRowFilledByPlayer(char player) {
         return isRowFilledByPlayer(POSITION_ZERO, player)
                 || isRowFilledByPlayer(POSITION_ONE, player)
