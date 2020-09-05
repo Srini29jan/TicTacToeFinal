@@ -2,26 +2,25 @@ package com.tdd.kata;
 
 public class Game {
 
-    private static final char PLAYER_X = 'X';
-    private static final int GRID_SIZE = 3;
-    private final char[][] board = new char[GRID_SIZE][GRID_SIZE];
-    private char previousPlayer;
+    private final Board board;
+
+    public Game() {
+        board = new Board();
+    }
 
     public char getPlayerAt(int row, int column) {
-        return board[row][column];
+        return board.getPlayerAt(row, column);
     }
 
     public void playAt(int row, int column) {
-        char currentPlayer = getCurrentPlayer();
-        board[row][column] = currentPlayer;
-        setPreviousPlayer(currentPlayer);
+        board.playAt(row, column);
     }
 
-    private void setPreviousPlayer(char currentPlayer) {
-        previousPlayer = currentPlayer;
+    public void setPreviousPlayer(char currentPlayer) {
+        board.setPreviousPlayer(currentPlayer);
     }
 
-    private char getCurrentPlayer() {
-        return previousPlayer == PLAYER_X ? 'O' : PLAYER_X;
+    public char getCurrentPlayer() {
+        return board.getCurrentPlayer();
     }
 }
