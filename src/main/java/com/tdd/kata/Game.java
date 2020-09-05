@@ -20,19 +20,13 @@ public class Game {
     }
 
     public char getWinner() {
-        if (isFirstRowFilledByPlayer(Player.PLAYER_X.getValue())) {
+        if (isFirstRowFilledByPlayer(Player.PLAYER_X.getValue())
+                || isSecondRowFilledByPlayer(Player.PLAYER_X.getValue())) {
             return Player.PLAYER_X.getValue();
         }
 
-        if (isFirstRowFilledByPlayer(Player.PLAYER_O.getValue())) {
-            return Player.PLAYER_O.getValue();
-        }
-
-        if (isSecondRowFilledByPlayer(Player.PLAYER_X.getValue())) {
-            return Player.PLAYER_X.getValue();
-        }
-
-        if (isSecondRowFilledByPlayer(Player.PLAYER_O.getValue())) {
+        if (isFirstRowFilledByPlayer(Player.PLAYER_O.getValue())
+                || isSecondRowFilledByPlayer(Player.PLAYER_O.getValue())) {
             return Player.PLAYER_O.getValue();
         }
 
