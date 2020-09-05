@@ -42,15 +42,4 @@ public class Game {
                 && getPlayerAt(positionTwo, POSITION_TWO) == player;
     }
 
-    private boolean isSecondRowFilledByPlayer(char player) {
-        return getPlayerAt(POSITION_ONE, POSITION_ZERO) == player
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == player;
-    }
-
-    private boolean isFirstRowFilledByPlayer(char player) {
-        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == player
-                && getPlayerAt(POSITION_ZERO, POSITION_ONE) == player
-                && getPlayerAt(POSITION_ZERO, POSITION_TWO) == player;
-    }
 }
