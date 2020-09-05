@@ -16,14 +16,6 @@ public class Game {
         board.playAt(row, column);
     }
 
-    public void setPreviousPlayer(char currentPlayer) {
-        board.setPreviousPlayer(currentPlayer);
-    }
-
-    public char getCurrentPlayer() {
-        return board.getCurrentPlayer();
-    }
-
     public char getWinner() {
         return 'X';
     }
