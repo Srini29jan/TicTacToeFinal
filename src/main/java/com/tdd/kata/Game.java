@@ -25,7 +25,7 @@ public class Game {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isAnyRowFilledByPlayerO()) {
+        if (isAnyRowFilledByPlayerX(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
