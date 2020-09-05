@@ -29,13 +29,17 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (getPlayerAt(POSITION_ZERO, POSITION_ZERO) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_ZERO) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_ZERO) == Player.PLAYER_X.getValue()) {
+        if (isFirstColumnFilledByPlayerX()) {
             winner = Player.PLAYER_X.getValue();
         }
 
         return winner;
+    }
+
+    private boolean isFirstColumnFilledByPlayerX() {
+        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_ONE, POSITION_ZERO) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_TWO, POSITION_ZERO) == Player.PLAYER_X.getValue();
     }
 
     private boolean isAnyRowFilledByPlayer(char player) {
