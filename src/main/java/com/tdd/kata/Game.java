@@ -31,13 +31,17 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (getPlayerAt(POSITION_ZERO, POSITION_ONE) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == Player.PLAYER_X.getValue()) {
+        if (isSecondColumnFilledByPlayerX()) {
             winner = Player.PLAYER_X.getValue();
         }
 
         return winner;
+    }
+
+    private boolean isSecondColumnFilledByPlayerX() {
+        return getPlayerAt(POSITION_ZERO, POSITION_ONE) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_TWO, POSITION_ONE) == Player.PLAYER_X.getValue();
     }
 
     private boolean isFirstColumnFilledByPlayer(char player) {
