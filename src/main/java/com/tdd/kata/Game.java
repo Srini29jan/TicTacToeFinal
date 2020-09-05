@@ -32,13 +32,17 @@ public class Game {
             return Player.PLAYER_X.getValue();
         }
 
-        if (getPlayerAt(POSITION_ONE, POSITION_ZERO) == Player.PLAYER_O.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_O.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == Player.PLAYER_O.getValue()) {
+        if (isSecondRowFilledByPlayerO()) {
             return Player.PLAYER_O.getValue();
         }
 
         return '\0';
+    }
+
+    private boolean isSecondRowFilledByPlayerO() {
+        return getPlayerAt(POSITION_ONE, POSITION_ZERO) == Player.PLAYER_O.getValue()
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_O.getValue()
+                && getPlayerAt(POSITION_ONE, POSITION_TWO) == Player.PLAYER_O.getValue();
     }
 
     private boolean isSecondRowFilledByPlayerX() {
