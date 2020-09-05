@@ -38,12 +38,6 @@ public class Game {
                 || isAnyRowFilledByPlayer(POSITION_TWO, playerX);
     }
 
-    private boolean isAnyRowFilledByPlayerO() {
-        return isAnyRowFilledByPlayer(POSITION_ZERO, Player.PLAYER_O.getValue())
-                || isAnyRowFilledByPlayer(POSITION_ONE, Player.PLAYER_O.getValue())
-                || isAnyRowFilledByPlayer(POSITION_TWO, Player.PLAYER_O.getValue());
-    }
-
     private boolean isAnyRowFilledByPlayer(int rowPosition, char player) {
         return getPlayerAt(rowPosition, POSITION_ZERO) == player
                 && getPlayerAt(rowPosition, POSITION_ONE) == player
