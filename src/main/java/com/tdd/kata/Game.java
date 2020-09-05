@@ -28,7 +28,7 @@ public class Game {
             return Player.PLAYER_O.getValue();
         }
 
-        if (isSecondRowFilledByPlayerX()) {
+        if (isSecondRowFilledByPlayerO(Player.PLAYER_X.getValue())) {
             return Player.PLAYER_X.getValue();
         }
 
