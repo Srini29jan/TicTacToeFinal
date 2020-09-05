@@ -22,9 +22,7 @@ public class Game {
     public char getWinner() {
         char winner = '\0';
         if (isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
-                || isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_X.getValue())
-                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_X.getValue())
-                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_X.getValue())) {
+                || isAnyColumnFilledByPlayerX()) {
             winner = Player.PLAYER_X.getValue();
         }
 
@@ -36,6 +34,12 @@ public class Game {
         }
 
         return winner;
+    }
+
+    private boolean isAnyColumnFilledByPlayerX() {
+        return isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_X.getValue())
+                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_X.getValue())
+                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_X.getValue());
     }
 
     private boolean isColumnFilledByPlayer(int columnPosition, char player) {
