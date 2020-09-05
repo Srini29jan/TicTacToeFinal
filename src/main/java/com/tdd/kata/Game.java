@@ -40,12 +40,6 @@ public class Game {
                 || isColumnFilledByPlayer(POSITION_TWO, playerO);
     }
 
-    private boolean isAnyColumnFilledByPlayerX() {
-        return isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_X.getValue())
-                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_X.getValue())
-                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_X.getValue());
-    }
-
     private boolean isColumnFilledByPlayer(int columnPosition, char player) {
         return getPlayerAt(POSITION_ZERO, columnPosition) == player
                 && getPlayerAt(POSITION_ONE, columnPosition) == player
