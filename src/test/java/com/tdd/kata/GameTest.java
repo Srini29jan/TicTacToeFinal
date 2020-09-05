@@ -139,4 +139,15 @@ public class GameTest {
 
         assertThat(game.getWinner(), is(Player.PLAYER_O.getValue()));
     }
+
+    @Test
+    public void getWinnerShouldReturnXIfXFillsSecondColumn() {
+        game.playAt(POSITION_ZERO, POSITION_ONE);
+        game.playAt(POSITION_ZERO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ONE);
+        game.playAt(POSITION_ZERO, POSITION_TWO);
+        game.playAt(POSITION_TWO, POSITION_ONE);
+
+        assertThat(game.getWinner(), is(Player.PLAYER_X.getValue()));
+    }
 }
