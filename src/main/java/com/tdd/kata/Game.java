@@ -23,23 +23,23 @@ public class Game {
         char winner = '\0';
         if (isFirstRowFilledByPlayer(Player.PLAYER_X.getValue())
                 || isSecondRowFilledByPlayer(Player.PLAYER_X.getValue())
-                || isThirdRowFilledByPlayer(Player.PLAYER_X.getValue())) {
+                || isThirdRowFilledByPlayer(Player.PLAYER_X.getValue(), POSITION_TWO)) {
             winner = Player.PLAYER_X.getValue();
         }
 
         if (isFirstRowFilledByPlayer(Player.PLAYER_O.getValue())
                 || isSecondRowFilledByPlayer(Player.PLAYER_O.getValue())
-                || isThirdRowFilledByPlayer(Player.PLAYER_O.getValue())) {
+                || isThirdRowFilledByPlayer(Player.PLAYER_O.getValue(), POSITION_TWO)) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isThirdRowFilledByPlayer(char player) {
-        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == player
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == player
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == player;
+    private boolean isThirdRowFilledByPlayer(char player, int positionTwo) {
+        return getPlayerAt(positionTwo, POSITION_ZERO) == player
+                && getPlayerAt(positionTwo, POSITION_ONE) == player
+                && getPlayerAt(positionTwo, POSITION_TWO) == player;
     }
 
     private boolean isSecondRowFilledByPlayer(char player) {
