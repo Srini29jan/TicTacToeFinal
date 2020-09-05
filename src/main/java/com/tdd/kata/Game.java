@@ -22,7 +22,7 @@ public class Game {
     public char getWinner() {
         char winner = '\0';
         if (isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
-                || isAnyColumnFilledByPlayerX()) {
+                || isAnyColumnFilledByPlayerO(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
