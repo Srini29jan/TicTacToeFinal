@@ -29,7 +29,7 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isFirstColumnFilledByPlayerX()) {
+        if (isFirstColumnFilledByPlayerO(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
