@@ -48,12 +48,6 @@ public class Game {
                 && getPlayerAt(POSITION_TWO, POSITION_TWO) == playerO;
     }
 
-    private boolean isThirdRowFilledByPlayerX() {
-        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == Player.PLAYER_X.getValue();
-    }
-
     private boolean isSecondRowFilledByPlayer(char player) {
         return getPlayerAt(POSITION_ONE, POSITION_ZERO) == player
                 && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
