@@ -33,21 +33,21 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isThirdColumnFilledByPlayerO(Player.PLAYER_X.getValue())) {
+        if (isThirdColumnFilledByPlayer(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isThirdColumnFilledByPlayerO(Player.PLAYER_O.getValue())) {
+        if (isThirdColumnFilledByPlayer(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isThirdColumnFilledByPlayerO(char playerO) {
-        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == playerO
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == playerO
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == playerO;
+    private boolean isThirdColumnFilledByPlayer(char player) {
+        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == player
+                && getPlayerAt(POSITION_ONE, POSITION_TWO) == player
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == player;
     }
 
     private boolean isSecondColumnFilledByPlayer(char player) {
