@@ -31,7 +31,7 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isSecondColumnFilledByPlayerX()) {
+        if (isSecondColumnFilledByPlayerO(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
