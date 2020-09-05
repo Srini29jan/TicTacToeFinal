@@ -41,11 +41,6 @@ public class Game {
                 || isTopRightToBottomLeftDiagonalFilledByPlayer(playerO);
     }
 
-    private boolean isAnyDiagonalFilledByPlayerX() {
-        return isTopLeftToBottomRightDiagonalFilledByPlayer(Player.PLAYER_X.getValue())
-                || isTopRightToBottomLeftDiagonalFilledByPlayer(Player.PLAYER_X.getValue());
-    }
-
     private boolean isTopRightToBottomLeftDiagonalFilledByPlayer(char player) {
         return getPlayerAt(POSITION_ZERO, POSITION_TWO) == player
                 && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
