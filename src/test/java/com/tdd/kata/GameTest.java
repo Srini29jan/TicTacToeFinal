@@ -1,5 +1,6 @@
 package com.tdd.kata;
 
+import javafx.print.PageLayout;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -172,5 +173,17 @@ public class GameTest {
         game.playAt(POSITION_TWO, POSITION_TWO);
 
         assertThat(game.getWinner(), is(Player.PLAYER_X.getValue()));
+    }
+
+    @Test
+    public void getWinnerShouldReturnOIfOFillsThirdColumn() {
+        game.playAt(POSITION_ONE, POSITION_ONE);
+        game.playAt(POSITION_ZERO, POSITION_TWO);
+        game.playAt(POSITION_ZERO, POSITION_ZERO);
+        game.playAt(POSITION_TWO, POSITION_TWO);
+        game.playAt(POSITION_ZERO, POSITION_ONE);
+        game.playAt(POSITION_ONE, POSITION_TWO);
+
+        assertThat(game.getWinner(), is(Player.PLAYER_O.getValue()));
     }
 }
