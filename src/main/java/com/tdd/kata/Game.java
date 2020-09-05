@@ -35,17 +35,17 @@ public class Game {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isTopLeftToBottomRightDiagonalFilledByPlayerO()) {
+        if (isTopLeftToBottomRightDiagonalFilledByPlayerO(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isTopLeftToBottomRightDiagonalFilledByPlayerO() {
-        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == Player.PLAYER_O.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_O.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == Player.PLAYER_O.getValue();
+    private boolean isTopLeftToBottomRightDiagonalFilledByPlayerO(char playerO) {
+        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == playerO
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == playerO
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == playerO;
     }
 
     private boolean isTopLeftToBottomRightDiagonalFilledByPlayerX() {
