@@ -2,6 +2,8 @@ package com.tdd.kata;
 
 public class Game {
 
+    private static final int POSITION_ZERO = 0;
+    private static final char PLAYER_X = 'X';
     private final Board board;
 
     public Game() {
@@ -17,8 +19,8 @@ public class Game {
     }
 
     public char getWinner() {
-        if (getPlayerAt(0, 0) == 'X' && getPlayerAt(0, 1) == 'X' && getPlayerAt(0, 2) == 'X') {
-            return 'X';
+        if (getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_X && getPlayerAt(POSITION_ZERO, 1) == PLAYER_X && getPlayerAt(POSITION_ZERO, 2) == PLAYER_X) {
+            return PLAYER_X;
         }
 
         return 'O';
