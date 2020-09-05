@@ -31,6 +31,12 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
+        if (getPlayerAt(POSITION_TWO, POSITION_ZERO) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_TWO, POSITION_ONE) == Player.PLAYER_X.getValue()
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == Player.PLAYER_X.getValue()) {
+            winner = Player.PLAYER_X.getValue();
+        }
+
         return winner;
     }
 
