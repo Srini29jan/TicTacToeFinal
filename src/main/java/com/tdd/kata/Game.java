@@ -20,17 +20,18 @@ public class Game {
     }
 
     public char getWinner() {
+        char winner = '\0';
         if (isFirstRowFilledByPlayer(Player.PLAYER_X.getValue())
                 || isSecondRowFilledByPlayer(Player.PLAYER_X.getValue())) {
-            return Player.PLAYER_X.getValue();
+            winner = Player.PLAYER_X.getValue();
         }
 
         if (isFirstRowFilledByPlayer(Player.PLAYER_O.getValue())
                 || isSecondRowFilledByPlayer(Player.PLAYER_O.getValue())) {
-            return Player.PLAYER_O.getValue();
+            winner = Player.PLAYER_O.getValue();
         }
 
-        return '\0';
+        return winner;
     }
 
     private boolean isSecondRowFilledByPlayer(char player) {
