@@ -1,8 +1,11 @@
 package com.tdd.kata;
 
-import org.junit.Test;
+import com.tdd.kata.io.InputScanner;
 
+import org.junit.Test;
 import org.junit.Assert;
+
+import org.mockito.Mockito;
 
 public class GameRunnerTest {
     @Test
@@ -22,6 +25,15 @@ public class GameRunnerTest {
         testableGameRunner.startGame();
 
         Assert.assertTrue(testableGameRunner.getMessage().contains(instruction));
+    }
+
+    @Test
+    public void positionInputShouldBeCollectedAfterPrintingInstructions() {
+        InputScanner scanner = Mockito.mock(InputScanner.class);
+
+        new GameRunner(scanner).startGame();
+
+        Mockito.verify(scanner, Mockito.times(1)).nextLine();
     }
 
     private class TestableGameRunner extends GameRunner {
