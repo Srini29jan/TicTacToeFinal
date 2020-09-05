@@ -23,6 +23,12 @@ public class Game {
             return PLAYER_X;
         }
 
-        return 'O';
+        if (getPlayerAt(POSITION_ZERO, POSITION_ZERO) == 'O'
+                && getPlayerAt(POSITION_ZERO, 1) == 'O'
+                && getPlayerAt(POSITION_ZERO, 2) == 'O') {
+            return 'O';
+        }
+
+        return '\0';
     }
 }
