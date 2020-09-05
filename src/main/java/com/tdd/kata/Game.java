@@ -23,8 +23,7 @@ public class Game {
         char winner = '\0';
         if (isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
                 || isAnyColumnFilledByPlayer(Player.PLAYER_X.getValue())
-                || isTopLeftToBottomRightDiagonalFilledByPlayer(Player.PLAYER_X.getValue())
-                || isTopRightToBottomLeftDiagonalFilledByPlayer(Player.PLAYER_X.getValue())) {
+                || isAnyDiagonalFilledByPlayerX()) {
             winner = Player.PLAYER_X.getValue();
         }
 
@@ -36,6 +35,11 @@ public class Game {
         }
 
         return winner;
+    }
+
+    private boolean isAnyDiagonalFilledByPlayerX() {
+        return isTopLeftToBottomRightDiagonalFilledByPlayer(Player.PLAYER_X.getValue())
+                || isTopRightToBottomLeftDiagonalFilledByPlayer(Player.PLAYER_X.getValue());
     }
 
     private boolean isTopRightToBottomLeftDiagonalFilledByPlayer(char player) {
