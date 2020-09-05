@@ -50,12 +50,6 @@ public class Game {
                 && getPlayerAt(POSITION_TWO, POSITION_ZERO) == playerO;
     }
 
-    private boolean isTopRightToBottomLeftDiagonalFilledByPlayerX() {
-        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == Player.PLAYER_X.getValue()
-                && getPlayerAt(POSITION_TWO, POSITION_ZERO) == Player.PLAYER_X.getValue();
-    }
-
     private boolean isTopLeftToBottomRightDiagonalFilledByPlayer(char player) {
         return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == player
                 && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
