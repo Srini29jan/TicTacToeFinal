@@ -25,17 +25,17 @@ public class Game {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isGameWonByPlayerO()) {
+        if (isGameWonByPlayerO(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isGameWonByPlayerO() {
-        return isAnyRowFilledByPlayer(Player.PLAYER_O.getValue())
-                || isAnyColumnFilledByPlayer(Player.PLAYER_O.getValue())
-                || isAnyDiagonalFilledByPlayer(Player.PLAYER_O.getValue());
+    private boolean isGameWonByPlayerO(char playerO) {
+        return isAnyRowFilledByPlayer(playerO)
+                || isAnyColumnFilledByPlayer(playerO)
+                || isAnyDiagonalFilledByPlayer(playerO);
     }
 
     private boolean isGameWonByPlayerX() {
