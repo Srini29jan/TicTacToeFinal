@@ -17,6 +17,10 @@ public class Game {
     }
 
     public char getWinner() {
-        return 'X';
+        if (getPlayerAt(0, 0) == 'X' && getPlayerAt(0, 1) == 'X' && getPlayerAt(0, 2) == 'X') {
+            return 'X';
+        }
+
+        return 'O';
     }
 }
