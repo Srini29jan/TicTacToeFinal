@@ -33,7 +33,7 @@ public class Game {
             winner = Player.PLAYER_O.getValue();
         }
 
-        if (isTopRightToBottomLeftDiagonalFilledByPlayerX()) {
+        if (isTopRightToBottomLeftDiagonalFilledByPlayerO(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
