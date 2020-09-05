@@ -23,21 +23,15 @@ public class Game {
         char winner = '\0';
         if (isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
                 || isFirstColumnFilledByPlayer(Player.PLAYER_X.getValue())
-                || isSecondColumnFilledByPlayer(Player.PLAYER_X.getValue())) {
+                || isSecondColumnFilledByPlayer(Player.PLAYER_X.getValue())
+                || isThirdColumnFilledByPlayer(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
         if (isAnyRowFilledByPlayer(Player.PLAYER_O.getValue())
                 || isFirstColumnFilledByPlayer(Player.PLAYER_O.getValue())
-                || isSecondColumnFilledByPlayer(Player.PLAYER_O.getValue())) {
-            winner = Player.PLAYER_O.getValue();
-        }
-
-        if (isThirdColumnFilledByPlayer(Player.PLAYER_X.getValue())) {
-            winner = Player.PLAYER_X.getValue();
-        }
-
-        if (isThirdColumnFilledByPlayer(Player.PLAYER_O.getValue())) {
+                || isSecondColumnFilledByPlayer(Player.PLAYER_O.getValue())
+                || isThirdColumnFilledByPlayer(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
