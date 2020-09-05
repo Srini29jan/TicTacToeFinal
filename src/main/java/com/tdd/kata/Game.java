@@ -27,13 +27,17 @@ public class Game {
         }
 
         if (isAnyRowFilledByPlayer(Player.PLAYER_O.getValue())
-                || isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_O.getValue())
-                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_O.getValue())
-                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_O.getValue())) {
+                || isAnyColumnFilledByPlayerO()) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
+    }
+
+    private boolean isAnyColumnFilledByPlayerO() {
+        return isColumnFilledByPlayer(POSITION_ZERO, Player.PLAYER_O.getValue())
+                || isColumnFilledByPlayer(POSITION_ONE, Player.PLAYER_O.getValue())
+                || isColumnFilledByPlayer(POSITION_TWO, Player.PLAYER_O.getValue());
     }
 
     private boolean isAnyColumnFilledByPlayerX() {
