@@ -2,7 +2,6 @@ package com.tdd.kata;
 
 public class Board {
 
-    private static final char PLAYER_X = 'X';
     private static final int GRID_SIZE = 3;
     private final char[][] gameBoard;
     private char previousPlayer;
@@ -26,6 +25,6 @@ public class Board {
     }
 
     public char getCurrentPlayer() {
-        return previousPlayer == PLAYER_X ? 'O' : PLAYER_X;
+        return previousPlayer == Player.PLAYER_X.getValue() ? 'O' : Player.PLAYER_X.getValue();
     }
 }

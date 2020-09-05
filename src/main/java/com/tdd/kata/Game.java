@@ -5,8 +5,6 @@ public class Game {
     private static final int POSITION_ZERO = 0;
     private static final int POSITION_ONE = 1;
     private static final int POSITION_TWO = 2;
-    private static final char PLAYER_X = 'X';
-    private static final char PLAYER_O = 'O';
     private final Board board;
 
     public Game() {
@@ -22,12 +20,12 @@ public class Game {
     }
 
     public char getWinner() {
-        if (isFirstRowFilledByPlayer(PLAYER_X)) {
-            return PLAYER_X;
+        if (isFirstRowFilledByPlayer(Player.PLAYER_X.getValue())) {
+            return Player.PLAYER_X.getValue();
         }
 
-        if (isFirstRowFilledByPlayer(PLAYER_O)) {
-            return PLAYER_O;
+        if (isFirstRowFilledByPlayer(Player.PLAYER_O.getValue())) {
+            return Player.PLAYER_O.getValue();
         }
 
         return '\0';
