@@ -38,12 +38,6 @@ public class Game {
                 || isAnyDiagonalFilledByPlayer(playerO);
     }
 
-    private boolean isGameWonByPlayerX() {
-        return isAnyRowFilledByPlayer(Player.PLAYER_X.getValue())
-                || isAnyColumnFilledByPlayer(Player.PLAYER_X.getValue())
-                || isAnyDiagonalFilledByPlayer(Player.PLAYER_X.getValue());
-    }
-
     private boolean isAnyDiagonalFilledByPlayer(char player) {
         return isTopLeftToBottomRightDiagonalFilledByPlayer(player)
                 || isTopRightToBottomLeftDiagonalFilledByPlayer(player);
