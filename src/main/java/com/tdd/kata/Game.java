@@ -23,4 +23,8 @@ public class Game {
     public char getCurrentPlayer() {
         return board.getCurrentPlayer();
     }
+
+    public char getWinner() {
+        return 'X';
+    }
 }
