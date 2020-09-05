@@ -21,21 +21,21 @@ public class Game {
 
     public char getWinner() {
         char winner = '\0';
-        if (isGameWonByPlayerO(Player.PLAYER_X.getValue())) {
+        if (isGameWonByPlayer(Player.PLAYER_X.getValue())) {
             winner = Player.PLAYER_X.getValue();
         }
 
-        if (isGameWonByPlayerO(Player.PLAYER_O.getValue())) {
+        if (isGameWonByPlayer(Player.PLAYER_O.getValue())) {
             winner = Player.PLAYER_O.getValue();
         }
 
         return winner;
     }
 
-    private boolean isGameWonByPlayerO(char playerO) {
-        return isAnyRowFilledByPlayer(playerO)
-                || isAnyColumnFilledByPlayer(playerO)
-                || isAnyDiagonalFilledByPlayer(playerO);
+    private boolean isGameWonByPlayer(char player) {
+        return isAnyRowFilledByPlayer(player)
+                || isAnyColumnFilledByPlayer(player)
+                || isAnyDiagonalFilledByPlayer(player);
     }
 
     private boolean isAnyDiagonalFilledByPlayer(char player) {
