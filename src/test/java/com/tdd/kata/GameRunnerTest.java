@@ -4,12 +4,13 @@ import com.tdd.kata.io.InputScanner;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -49,7 +50,7 @@ public class GameRunnerTest {
 
         testableGameRunner.startGame();
 
-        Assert.assertTrue(testableGameRunner.getMessage().contains(instruction));
+        assertTrue(testableGameRunner.getMessage().contains(instruction));
     }
 
     @Test
@@ -85,8 +86,8 @@ public class GameRunnerTest {
         testableGameRunner.startGame();
 
         String message = testableGameRunner.getMessage();
-        Assert.assertNotNull(message);
-        Assert.assertTrue(message.contains("Game is draw!!"));
+        assertNotNull(message);
+        assertTrue(message.contains("Game is draw!!"));
     }
 
     @Test
@@ -100,8 +101,8 @@ public class GameRunnerTest {
         testableGameRunner.startGame();
 
         String message = testableGameRunner.getMessage();
-        Assert.assertNotNull(message);
-        Assert.assertTrue(message.contains(winnerMessage));
+        assertNotNull(message);
+        assertTrue(message.contains(winnerMessage));
     }
 
     @Test
@@ -113,8 +114,8 @@ public class GameRunnerTest {
         testableGameRunner.startGame();
 
         String errorMessage = testableGameRunner.getErrorMessages();
-        Assert.assertNotNull(errorMessage);
-        Assert.assertTrue(errorMessage.contains(message));
+        assertNotNull(errorMessage);
+        assertTrue(errorMessage.contains(message));
     }
 
     private class TestableGameRunner extends GameRunner {
