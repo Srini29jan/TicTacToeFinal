@@ -286,4 +286,19 @@ public class GameTest {
 
         Assert.assertTrue(game.isOver());
     }
+
+    @Test
+    public void isOverShouldReturnTrueIfNeitherPlayerWonAndAllCellsAreFilled() {
+        game.playAt(POSITION_ZERO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_TWO);
+        game.playAt(POSITION_ZERO, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_TWO);
+        game.playAt(POSITION_ZERO, POSITION_TWO);
+
+        Assert.assertTrue(game.isOver());
+    }
 }

@@ -85,6 +85,6 @@ public class Game {
     }
 
     public boolean isOver() {
-        return getWinner() == 'X' || getWinner() == 'O';
+        return getWinner() == 'X' || getWinner() == 'O' || isDraw();
     }
 }
