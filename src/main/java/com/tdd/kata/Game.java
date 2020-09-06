@@ -82,4 +82,8 @@ public class Game {
     public boolean isDraw() {
         return board.numberOfCellsFilled == 9 && getWinner() == '\0';
     }
+
+    public boolean isOver() {
+        return getWinner() == 'X';
+    }
 }
