@@ -89,4 +89,8 @@ public class Game {
         char winner = getWinner();
         return winner == Player.PLAYER_X.getValue() || winner == Player.PLAYER_O.getValue() || isDraw();
     }
+
+    public boolean isPositionOccupied(int row, int column) {
+        return false;
+    }
 }

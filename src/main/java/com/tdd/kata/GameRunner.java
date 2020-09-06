@@ -49,6 +49,11 @@ public class GameRunner {
             int row = Integer.parseInt(position.substring(0, 1));
             int column = Integer.parseInt(position.substring(2));
 
+            if (game.isPositionOccupied(row, column)) {
+                printError("Please choose a position which is unoccupied in the board");
+                continue;
+            }
+
             game.playAt(row, column);
         }
     }
