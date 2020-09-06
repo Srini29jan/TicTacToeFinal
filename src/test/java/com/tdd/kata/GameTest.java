@@ -1,5 +1,6 @@
 package com.tdd.kata;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -246,5 +247,20 @@ public class GameTest {
         game.playAt(POSITION_ZERO, POSITION_TWO);
 
         assertThat(game.getWinner(), is(CHARACTER_NULL));
+    }
+
+    @Test
+    public void isDrawShouldReturnTrueIfAllCellsAreFilledAndNeitherPlayerWon() {
+        game.playAt(POSITION_ZERO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_TWO);
+        game.playAt(POSITION_ZERO, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_TWO);
+        game.playAt(POSITION_ZERO, POSITION_TWO);
+
+        Assert.assertTrue(game.isDraw());
     }
 }

@@ -80,6 +80,6 @@ public class Game {
     }
 
     public boolean isDraw() {
-        return false;
+        return board.numberOfCellsFilled == 9 && getWinner() == '\0';
     }
 }
