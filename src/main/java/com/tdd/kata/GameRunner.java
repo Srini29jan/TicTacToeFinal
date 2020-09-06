@@ -46,8 +46,8 @@ public class GameRunner {
                 continue;
             }
 
-            int row = Integer.valueOf(position.substring(0, 1));
-            int column = Integer.valueOf(position.substring(2));
+            int row = Integer.parseInt(position.substring(0, 1));
+            int column = Integer.parseInt(position.substring(2));
 
             game.playAt(row, column);
         }
