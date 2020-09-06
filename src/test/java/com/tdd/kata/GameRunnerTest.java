@@ -7,13 +7,13 @@ import org.junit.Test;
 import org.junit.Assert;
 
 import org.mockito.InjectMocks;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.anyInt;
 
 public class GameRunnerTest {
 
@@ -29,13 +29,12 @@ public class GameRunnerTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        when(scanner.nextLine()).thenReturn("2 0");
+        when(game.isNotOver()).thenReturn(true, false);
     }
 
     @Test
     public void instructionsShouldBePrintedOnGameStart() {
-        when(scanner.nextLine()).thenReturn("2 0");
-        when(game.isNotOver()).thenReturn(true, false);
-
         String instruction = new StringBuilder("Welcome to TicTacToe game!!\n")
                 .append("This is a game on a board of size 3x3\n")
                 .append("Position of each box is represented by a combination of two numbers as below\n")
@@ -55,9 +54,6 @@ public class GameRunnerTest {
 
     @Test
     public void positionInputShouldBeCollectedAfterPrintingInstructions() {
-        when(scanner.nextLine()).thenReturn("2 0");
-        when(game.isNotOver()).thenReturn(true, false);
-
         gameRunner.startGame();
 
         verify(scanner, times(1)).nextLine();
@@ -65,9 +61,6 @@ public class GameRunnerTest {
 
     @Test
     public void collectedPositionInputShouldBePassedToGame() {
-        when(scanner.nextLine()).thenReturn("2 0");
-        when(game.isNotOver()).thenReturn(true, false);
-
         gameRunner.startGame();
 
         verify(game, times(1)).playAt(2, 0);
@@ -75,15 +68,13 @@ public class GameRunnerTest {
 
     @Test
     public void gameShouldBePlayedUntilItsOver() {
-        when(scanner.nextLine()).thenReturn("2 0");
-        when(scanner.nextLine()).thenReturn("1 0");
-        when(scanner.nextLine()).thenReturn("2 1");
+        when(scanner.nextLine()).thenReturn("2 0", "1 0", "2 1");
         when(game.isNotOver()).thenReturn(true, true, true, false);
 
         gameRunner.startGame();
 
         verify(scanner, times(3)).nextLine();
-        verify(game, times(3)).playAt(Matchers.anyInt(), Matchers.anyInt());
+        verify(game, times(3)).playAt(anyInt(), anyInt());
     }
 
     private class TestableGameRunner extends GameRunner {
