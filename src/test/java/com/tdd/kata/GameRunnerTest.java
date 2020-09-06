@@ -104,6 +104,19 @@ public class GameRunnerTest {
         Assert.assertTrue(message.contains(winnerMessage));
     }
 
+    @Test
+    public void playAtShouldShouldThrowErrorIfRowIsLessThanZero() {
+        when(scanner.nextLine()).thenReturn("-1 0");
+        String message = "Please give a valid input for position";
+        TestableGameRunner testableGameRunner = new TestableGameRunner(scanner, game);
+
+        testableGameRunner.startGame();
+
+        String errorMessage = testableGameRunner.getErrorMessages();
+        Assert.assertNotNull(errorMessage);
+        Assert.assertTrue(errorMessage.contains(message));
+    }
+
     private class TestableGameRunner extends GameRunner {
 
         public TestableGameRunner(InputScanner scanner, Game game) {
@@ -112,13 +125,24 @@ public class GameRunnerTest {
 
         private StringBuilder message = new StringBuilder();
 
+        private StringBuilder errorMessages = new StringBuilder();
+
         @Override
         protected void print(String message) {
             this.message.append(message);
         }
 
+        @Override
+        protected void printError(String errorMessage) {
+            errorMessages.append(errorMessage);
+        }
+
         public String getMessage() {
             return message.toString();
+        }
+
+        public String getErrorMessages() {
+            return errorMessages.toString();
         }
     }
 }
