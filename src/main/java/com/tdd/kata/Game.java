@@ -5,6 +5,7 @@ public class Game {
     private static final int POSITION_ZERO = 0;
     private static final int POSITION_ONE = 1;
     private static final int POSITION_TWO = 2;
+    private static final char CHARACTER_NULL = '\0';
     private final Board board;
 
     public Game() {
@@ -20,7 +21,7 @@ public class Game {
     }
 
     public char getWinner() {
-        char winner = '\0';
+        char winner = CHARACTER_NULL;
         if (isGameWonByPlayer(board.previousPlayer)) {
             winner = board.previousPlayer;
         }
@@ -80,7 +81,7 @@ public class Game {
     }
 
     public boolean isDraw() {
-        return board.numberOfCellsFilled == 9 && getWinner() == '\0';
+        return board.numberOfCellsFilled == 9 && getWinner() == CHARACTER_NULL;
     }
 
     public boolean isOver() {
