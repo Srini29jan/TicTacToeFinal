@@ -78,4 +78,8 @@ public class Game {
     public boolean isNotOver() {
         return true;
     }
+
+    public boolean isDraw() {
+        return false;
+    }
 }
