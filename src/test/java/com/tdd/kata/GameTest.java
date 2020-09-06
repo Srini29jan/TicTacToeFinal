@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class GameTest {
 
@@ -261,7 +262,7 @@ public class GameTest {
         game.playAt(POSITION_TWO, POSITION_TWO);
         game.playAt(POSITION_ZERO, POSITION_TWO);
 
-        Assert.assertTrue(game.isDraw());
+        assertTrue(game.isDraw());
     }
 
     @Test
@@ -272,7 +273,7 @@ public class GameTest {
         game.playAt(POSITION_ONE, POSITION_ONE);
         game.playAt(POSITION_ZERO, POSITION_TWO);
 
-        Assert.assertTrue(game.isOver());
+        assertTrue(game.isOver());
     }
 
     @Test
@@ -284,7 +285,7 @@ public class GameTest {
         game.playAt(POSITION_ONE, POSITION_ONE);
         game.playAt(POSITION_ZERO, POSITION_TWO);
 
-        Assert.assertTrue(game.isOver());
+        assertTrue(game.isOver());
     }
 
     @Test
@@ -299,6 +300,6 @@ public class GameTest {
         game.playAt(POSITION_TWO, POSITION_TWO);
         game.playAt(POSITION_ZERO, POSITION_TWO);
 
-        Assert.assertTrue(game.isOver());
+        assertTrue(game.isOver());
     }
 }

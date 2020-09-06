@@ -5,6 +5,7 @@ public class Game {
     private static final int POSITION_ZERO = 0;
     private static final int POSITION_ONE = 1;
     private static final int POSITION_TWO = 2;
+    private static final int TOTAL_NUMBER_OF_CELLS = 9;
     private static final char CHARACTER_NULL = '\0';
     private final Board board;
 
@@ -77,14 +78,15 @@ public class Game {
     }
 
     public boolean isNotOver() {
-        return true;
+        return !isOver();
     }
 
     public boolean isDraw() {
-        return board.numberOfCellsFilled == 9 && getWinner() == CHARACTER_NULL;
+        return board.numberOfCellsFilled == TOTAL_NUMBER_OF_CELLS && getWinner() == CHARACTER_NULL;
     }
 
     public boolean isOver() {
-        return getWinner() == 'X' || getWinner() == 'O' || isDraw();
+        char winner = getWinner();
+        return winner == Player.PLAYER_X.getValue() || winner == Player.PLAYER_O.getValue() || isDraw();
     }
 }
